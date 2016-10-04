@@ -1,0 +1,115 @@
+<div ng-controller="step1Ctrl">
+	<!--Registration details-->
+	<div class="row">
+		<div class="col-md-4 pull-right">
+			<img src="{{data.companyLogo}}" class="brand-logo" ng-if="data.companyLogo">
+		</div>
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-12">
+					<label>Company Name</label>
+					<input type="text" name="companyName"
+					ng-model="data.companyName" class="form-control" required>
+				</div>
+			</div>			
+			<div class="row">
+				<div class="col-md-6">
+					<label>Registration Number</label>
+					<input type="text" name="registrationNumber" class="form-control" ng-model="data.registrationNumber" required>
+				</div>
+				<div class="col-md-6">
+					<label>Registration Date</label>
+					<input type="date" name="registrationDate" class="form-control" ng-model="data.registrationDate" required>
+				</div>
+			</div>
+		</div>		
+	</div>	
+
+	<!-- Address -->
+	<div class="row">
+		<div class="col-md-6">
+			<label>Registered Address</label>
+			<textarea class="form-control" placeholder="Registered Address" ng-model="data.registeredAddress"></textarea>
+			<br/>
+
+		</div>
+		<div class="col-md-6">
+			<div class="row">
+				<label>Corporate Office Address</label>
+				Same as registered <input type="checkbox" name="corpSameAsRegistered"> 
+			</div>
+			<div class="row">
+				<textarea class="form-control" placeholder="Corporate Office Address" required ng-model="data.corporateOfficeAddress"></textarea>
+			</div>
+		</div>
+	</div>
+
+	<!-- List of branch offices -->
+	<div class="row">
+		<div class="col-md-12">
+			<label>Branches</label>
+			<br/>
+			<table class="table table-striped">
+				<tr>
+					<th>Branch Name</th>
+					<th>Branch Address</th>
+					<th>Branch Contact</th>
+					<th>Operations</th>
+				</tr>
+				<tr ng-repeat="branch in data.branches">
+					<td>{{branch.name}}</td>
+					<td>{{branch.address}}</td>
+					<td>{{branch.contact}}</td>
+					<td><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Edit</a></td>
+				</tr>
+			</table>
+			<br/>
+			<a href="#" class="btn btn-primary">Add More</a>
+		</div>
+	</div>
+
+	<!-- Head Person -->
+	<div class="row">
+		<div class="col-md-6">
+			<label>Name of Head person <span class="label-help">person responsible for deals</span></label>
+			<input type="text" name="headPerson" ng-model="data.headPerson" class="form-control" required>
+		</div>
+		<div class="col-md-6">
+			<label>Designation</label>
+			<input type="text" name="headPerson" ng-model="data.headPersonDesignation" class="form-control" required>
+		</div>
+	</div>
+
+	<!-- Contacts -->
+	<div class="row">
+		<div class="col-md-12">
+			<label>Contacts</label>
+			<br/>
+			<table class="table table-striped">
+				<tr>
+					<th>Person Name</th>
+					<th>Contact Number</th>
+				</tr>
+				<tr ng-repeat="contact in data.contacts">
+					<td>{{contact.personName}}</td>
+					<td>{{contact.contactNumber}}</td>
+				</tr>
+			</table>
+			<br/>
+			<a href="#" class="btn btn-primary">Add More</a>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<label>Website address</label>
+			<input type="text" ng-model="data.companySite" class="form-control" required placeholder="Enter bharatventures.com if no site">
+		</div>
+		<div class="col-md-6">
+			<label>Email address</label>
+			<input type="text" ng-model="data.emailAddress" class="form-control" required>
+		</div>
+	</div>
+	<br/>
+	
+</div>

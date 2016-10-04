@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap-theme.min.css' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  </head>
+  <body ng-app="bvBSA">
+    <div class="container-fluid" ng-controller="rootCtrl">
+    	<div ng-include="'/templates/bsa_templates/bsa_header.html'" class="header">
+    		Header
+    	</div>
+    	<div class="container">
+    		<div class="row">
+		    	<div ng-include="'/templates/bsa_templates/bsa_leftnav.html'" class="col-md-3 left-nav">
+		    		Left navigation
+		    	</div>    	
+		    	<div ui-view class="col-md-9 right-nav">
+		    			
+		    	</div>    			    	
+	    	</div>
+	    	
+	    </div>
+	    <div ng-include="'/templates/bsa_templates/bsa_footer.html'" class="footer">
+		    		Footer
+		</div>
+    </div>
+
+
+
+
+    <!-- Library scripts inclusion -->
+    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.4.js"></script>
+
+    <!-- App script inclusion -->
+    <script type="text/javascript" src="/javascripts/config.js"></script>
+    <script type="text/javascript" src="/javascripts/controllers/bsa_controllers.js"></script>
+  </body>
+</html>
